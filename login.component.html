@@ -1,0 +1,52 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4 back-bar text-center">
+            
+            <!-- Sign Up or Login message -->
+            <div class="text-center">
+                <img src="../../assets/title.svg" width="315" />
+            </div>
+            
+            <div class="sign-up">
+                Sign up or Login
+            </div>
+        <!-- Sign Up or Login message -->
+        <form [formGroup] = "formObj" #form ngSubmit="submitData(form)">
+
+        <!-- mobile input box -->
+            <div>
+                    <input type="text"  
+                        class="mobile-number" #mobileNumber 
+                        ng2TelInput (hasError)="hasError($event)" 
+                        (ng2TelOutput)="getNumber($event)"
+                        (intlTelInputObject)="telInputObject($event)"
+                        (countryChange)="onCountryChange($event)"
+                        [ng2TelInputOptions]="{initialCountry: 'in'}"
+                        formControlName = "mobileNumber"
+                        name="mobileNumber"
+                        ngModel>
+            </div>
+          
+            <div class="err-msg" *ngIf="mobileNumberF?.errors?.pattern">Please enter valid mobile number !!!
+            </div>
+          
+            <!-- mobile input box -->
+          
+            <div class="login-msg">
+                    Mobile number based login available for select contriies only.<br>
+                    For other contries please login via google and facebook
+                </div>
+
+                <div class="align-self-center">
+                    <button class=" btn btn-cont" [disabled] ="mobileNumberF?.errors?.required || mobileNumberF?.errors?.pattern || mobileNumberF?.errors?.minlength" (click)="passNumber(mobileNumber.value)">Continue</button>
+                </div>
+
+                <div class="text-center">
+                    By loggining you agree to our <span style="color: rgb(102, 102, 235);"> Term of <br> service</span>
+                    and <span style="color: rgb(102, 102, 235);">Privacy Policy</span>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

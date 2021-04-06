@@ -1,0 +1,41 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4 back-col">
+            <div class="text-center">
+                <img src="../../assets/title.svg" width="315" />
+            </div>
+
+            <div class="verify">
+                Verify Your Number
+            </div>
+
+            <div class="mobile-number">OTP has been send to 
+                <span style="color: gray;">{{mobileNumber}}</span> 
+                <span style="text-decoration: underline;color: blue; margin-left: 5px;">
+                    <a routerLink="/edit_number">Edit</a>
+                </span>
+            </div>
+
+            <form>
+            <div>
+                <ng-otp-input 
+                (onInputChange)="onOtpChange($event)" 
+                [config]="{length:4}">
+                </ng-otp-input>
+            </div>
+            
+            <div class="text-center resend-msg">
+                <a routerLink="#" style="color: gray;">
+                    <button  (click)="resendOtp()" class="resend-btn" [ngStyle]="{ color : countSec>=0? 'gray' : 'blue'}" [disabled] =" countSec < 0 ? false : true">Resend OTP</button>
+                </a> in {{countSec >= 0 ? countSec : 0}} seconds
+            </div>
+            
+            <div>
+                <button type="submit" class="log-in btn" (click)="login()">Log In Now</button>
+            </div>
+            </form>
+        </div>
+    </div>
+</div>
+{{request_token}}

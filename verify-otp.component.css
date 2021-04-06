@@ -1,0 +1,49 @@
+.container {
+  background-color: yellow;
+}
+.resend-btn {
+  background-color: inherit;
+  border: none;
+  outline: none;
+}
+.back-col {
+  border: 2px solid gray;
+  border-radius: 5px;
+  padding: 70px 40px 100px 35px;
+  background-color: white;
+}
+.verify {
+  font-size: 2rem;
+  font-weight: 500;
+  margin-top: 50px;
+  margin-bottom: 10px;
+}
+.mobile-number {
+  font-weight: 500;
+  margin-bottom: 30px;
+}
+
+.log-in {
+  font-weight: 500;
+  padding: 10px 120px;
+}
+
+.row {
+  color: rgb(14, 90, 151);
+  padding: 70px 10px;
+}
+
+.log-in {
+  background-color: rgb(198, 219, 7);
+  color: white;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.resend-msg {
+  margin-top: 15px;
+  margin-bottom: 40px;
+  font-weight: 500;
+}
